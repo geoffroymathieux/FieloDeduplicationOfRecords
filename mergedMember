@@ -1,0 +1,16 @@
+DEPUPLICATION OF RECORDS (mergedMember)
+
+static void FieloPLT.MemberService.mergeMember (Map<Id,Id> mapMembersMerge, Boolean recalculateLevels, Boolean reparentOnline, String confJson)
+
+Fielo has developed API’s for the deduplication of records. The mergedMember method merges duplicate records of Members to render accurate loyalty point count and data rendered for each Member. A static resource (MembersMerge) specifies criteria for resolving field-level differences in duplicate Member records.  Each product (PLT, ELR, PRP, etc.) has a static resource defined in the Resources field.  The static resource has a JSON with the attributes of each member to be merged.
+
+Parameters
+Parameter	Type	Description
+MapMembersMerge	Map<Id,Id>	Defines two members to be merged.
+recalculateLevels	Boolean	When true, recalculate count for two members.
+reparentOnline	Boolean	When true, merge two members online.
+ConfJson	String	Identifies data points to be merged.
+
+Return Value
+Type	Description
+Map<Id,String>	Map of errors from Salesforce Contact IDs. If operation is successful, value is an empty map.
